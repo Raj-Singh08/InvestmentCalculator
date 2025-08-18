@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Inject, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AppService } from '../app.service';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class UserInputComponent {
   duration = '';
 
   @Output() calculateData = new EventEmitter();
+
+  appService = inject(AppService);
 
   calculateInvestmentResults() {
     this.calculateData.emit({

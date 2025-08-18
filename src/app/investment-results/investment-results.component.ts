@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { AppService } from '../app.service';
 @Component({
   selector: 'app-investment-results',
   standalone: true,
@@ -8,9 +9,9 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
-  @Input({required:true}) annualData!: {
-    year: number, interest: string,
-    valueEndOfYear: string, annualInvestment: number,
-    totalInterest: string, totalAmountInvested: string
-  }[];
+
+  appService = inject(AppService);
+
+  
+
 }

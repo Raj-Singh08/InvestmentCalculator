@@ -7,7 +7,7 @@
         <th>Invested Capital</th>
     </thead>
     <tbody>
-        @for(data of annualData;track data.year){
+        @for(data of this.appService.displayTable();track data.year){
             <tr>
             <td>{{data.year}}</td>
             <td>{{data.valueEndOfYear | currency}} </td>
